@@ -124,6 +124,17 @@ body {
     border: 2px solid #DAF7A6;
 }
 
+.bioheal-button a{
+    color: #51223B;
+  
+}
+
+.bioheal-button a:hover{
+    color: #DAF7A6;
+  
+}
+
+
 .bioheal-button:hover {
     background: transparent;
     color: #DAF7A6;
@@ -680,6 +691,12 @@ z-index: 1;
     letter-spacing: 1px;
     position: relative;
     overflow: hidden;
+}
+
+.buy-btn a {
+    color: #DAF7A6;
+    text-decoration: none;
+ 
 }
 
 .buy-btn::before {
