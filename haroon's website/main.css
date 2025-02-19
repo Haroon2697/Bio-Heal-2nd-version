@@ -1,0 +1,1782 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: #4A1E3F;
+    color: #CBC3E3;
+}
+/* Navigation Styles */
+/* Navbar Styles */
+.bioheal-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #3A1A2D;
+    padding: 20px 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.bioheal-logo img {
+    width: 200px;
+    height: auto;
+}
+
+/* Navigation Links */
+.bioheal-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 2000; /* Ensures it stays above all content */
+
+    
+}
+
+.close-menu {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #DAF7A6;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .close-menu {
+        display: block; /* Show the close button on small screens */
+    }
+}
+
+.bioheal-close {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    color: #DAF7A6;
+    cursor: pointer;
+}
+
+/* Show the close button only in mobile view */
+@media (max-width: 768px) {
+    .bioheal-close {
+        display: block;
+    }
+}
+
+
+.bioheal-nav-links li {
+    margin: 0 20px;
+}
+
+.bioheal-nav-links a {
+    text-decoration: none;
+    color: #CBC3E3;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.bioheal-nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #DAF7A6;
+    transition: width 0.3s ease;
+}
+
+.bioheal-nav-links a:hover {
+    color: #DAF7A6;
+}
+
+.bioheal-nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Button Styles */
+.bioheal-button {
+    background: #DAF7A6;
+    color: #51223B;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 2px solid #DAF7A6;
+}
+
+.bioheal-button:hover {
+    background: transparent;
+    color: #DAF7A6;
+}
+
+/* Mobile Menu */
+.bioheal-menu-toggle {
+    display: none;
+    color: #DAF7A6;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .bioheal-menu-toggle {
+        display: block;
+    }
+
+    .bioheal-nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #3A1A2D;
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    .bioheal-nav-links.active {
+        display: flex;
+    }
+
+    .bioheal-nav-links li {
+        margin: 10px 0;
+    }
+}
+
+
+
+
+
+.features-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #3A1A2D; /* Matching navbar color */
+    position: relative;
+    gap: 2rem;
+}
+
+.feature {
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.feature .icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(203, 195, 227, 0.1); /* Light purple with opacity */
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.feature .icon svg {
+    color: #DAF7A6; /* Mint green color */
+    transition: transform 0.3s ease;
+}
+
+.feature:hover .icon {
+    background: rgba(203, 195, 227, 0.15);
+}
+
+.feature:hover .icon svg {
+    transform: scale(1.1);
+}
+
+.feature p {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.6;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+    .features-section {
+        flex-direction: column;
+        padding: 3rem 1rem;
+    }
+
+    .feature {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+
+
+/* Hero section */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.bioheal-hero {
+    position: relative;
+    min-height: 80vh;
+    background: linear-gradient(135deg, #792359 0%, #51223B 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 4rem 2rem;
+}
+
+/* Background Circle Patterns */
+.circle-behind-1,
+.circle-behind-2 {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.circle-behind-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle at center, rgba(110, 121, 35, 0.3), transparent 70%);
+    top: -100px;
+    right: -50px;
+}
+
+.circle-behind-2 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle at center, rgba(51, 121, 35, 0.8), transparent 70%);
+    bottom: -50px;
+    left: -50px;
+    z-index: -1;
+
+}
+/* Additional decorative circles */
+.circle-top-left {
+position: absolute;
+width: 300px;
+height: 300px;
+background: radial-gradient(circle at center, rgba(63, 61, 62, 0.873), transparent 70%);
+top: -50px;
+left: -50px;
+z-index: -1;
+}
+
+.circle-bottom-right {
+position: absolute;
+width: 450px;
+height: 450px;
+background: radial-gradient(circle at center, rgba(227, 195, 212, 0.15), transparent 50%);
+bottom: -50px;
+right: -50px;
+z-index: 1;
+}
+
+.bioheal-hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    position: relative;
+    z-index: 2;
+    align-items: center;
+}
+
+.bioheal-hero-badge {
+    display: inline-block;
+    background-color: #DAF7A6;
+    color: #51223B;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.bioheal-hero-text {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.bioheal-hero-text h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.bioheal-hero-text h1 span {
+    display: block;
+    color: #D72483;
+    margin-top: 0.5rem;
+}
+
+.bioheal-hero-text p {
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    margin-left: 0;
+    margin-right: auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.bioheal-hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.bioheal-hero-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.bioheal-hero-button.primary {
+    background: #51223B;
+    color: #fff;
+}
+
+.bioheal-hero-button.secondary {
+    background: #fff;
+    color: #51223B;
+}
+
+.bioheal-hero-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.bioheal-hero-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.bioheal-hero-feature {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    color: #fff;
+}
+
+.bioheal-hero-feature i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #DAF7A6;
+}
+
+.bioheal-hero-image {
+    position: relative;
+}
+
+.bioheal-hero-image::before,
+.bioheal-hero-image::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+.bioheal-hero-image::before {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle at center, #D72483, transparent 70%);
+    top: -100px;
+    right: -100px;
+}
+
+.bioheal-hero-image::after {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle at center, #D72483, transparent 70%);
+    bottom: -50px;
+    left: -50px;
+}
+
+.bioheal-hero-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
+    animation: float 6s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@media (max-width: 968px) {
+    .bioheal-hero {
+        padding: 6rem 1.5rem 4rem;
+    }
+
+    .bioheal-hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .bioheal-hero-text {
+        padding: 1rem;
+        order: 2;
+    }
+
+    .bioheal-hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bioheal-hero-buttons {
+        justify-content: center;
+    }
+
+    .bioheal-hero-image {
+        order: 1;
+    }
+
+    .bioheal-hero-image img {
+        max-width: 300px;
+    }
+
+    .bioheal-hero-features {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 0 ;
+    }
+}
+
+
+
+/* ingredient section */
+
+
+
+
+
+        /* Deals Section Styling */
+     /* Deals Section Styling */
+.deals-section {
+    text-align: center;
+    background: #51223B;
+    padding: 80px 20px;
+    color: #DAF7A6;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative Elements */
+.deals-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(191, 64, 191, 0.1) 0%, rgba(93, 63, 211, 0.1) 100%);
+    pointer-events: none;
+}
+
+.deals-section h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 40px;
+    position: relative;
+    text-shadow: 0 0 20px rgba(218, 247, 166, 0.2);
+    color: #DAF7A6;
+    font-weight: 800;
+}
+
+.deals-section h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #DAF7A6;
+    margin: 20px auto;
+    border-radius: 2px;
+    box-shadow: 0 0 15px rgba(218, 247, 166, 0.3);
+}
+
+/* Container for Deals */
+.deals-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Individual Deal Card */
+.deal-card {
+    background: rgba(203, 195, 227, 0.05);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(218, 247, 166, 0.1);
+}
+
+.deal-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #DAF7A6;
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.deal-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(203, 195, 227, 0.1);
+    border-color: rgba(218, 247, 166, 0.2);
+}
+
+.deal-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Deal Title */
+.deal-card h3 {
+    font-size: 24px;
+    color: #DAF7A6;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Product Image */
+.deal-card-bottle {
+    width: 100%;
+    max-width: 250px;
+    margin: 20px 0;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 0 20px rgba(218, 247, 166, 0.2));
+}
+
+.deal-card-img{
+    width: 100%;
+    max-width: 250px;
+    margin: 20px 0;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 0 20px rgba(218, 247, 166, 0.2));
+}
+
+.deal-card-img:hover {
+    transform: scale(1.02) ;
+    filter: drop-shadow(0 0 30px rgba(218, 247, 166, 0.3));
+}
+
+.deal-card-bottle:hover {
+    transform: scale(1.05) rotate(-3deg);
+    filter: drop-shadow(0 0 30px rgba(218, 247, 166, 0.3));
+}
+
+/* Price Styling */
+.price {
+    font-size: 36px;
+    font-weight: 800;
+    color: #DAF7A6;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.old-price{
+    color: #c5dd9a;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.price::before {
+    content: '$';
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Buy Now Button */
+.buy-btn {
+    background: rgba(218, 247, 166, 0.1);
+    color: #DAF7A6;
+    border: 1px solid rgba(218, 247, 166, 0.2);
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.buy-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(218, 247, 166, 0.15);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.buy-btn:hover {
+    background: rgba(218, 247, 166, 0.2);
+    border-color: rgba(218, 247, 166, 0.3);
+    transform: translateY(-2px);
+}
+
+.buy-btn:hover::before {
+    opacity: 1;
+}
+
+
+.buy-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+/* Popular Badge */
+.deal-card.popular::after {
+    content: 'MOST POPULAR';
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    background: #DAF7A6;
+    color: #51223B;
+    padding: 8px 40px;
+    font-size: 12px;
+    font-weight: 600;
+    transform: rotate(45deg);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.review-container {
+    color: #D5FFBF; /* Neon Green */
+    text-align: center;
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+}
+
+.review-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.stars {
+    font-size: 30px;
+    color: #FFD700; /* Gold Color for Stars */
+    letter-spacing: 3px;
+    margin: 10px 0;
+}
+
+.review-text {
+    font-size: 18px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .deals-section {
+        padding: 60px 20px;
+    }
+
+    .deal-card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+
+       /* Ingredients Section */
+.ingredients-section {
+    background-color:  #3A1A2D; /* Darker shade of your theme color */
+    padding: 6rem 2rem;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.section-header h1 {
+    font-size: 2.5rem;
+    color: #DAF7A6;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(218, 247, 166, 0.2);
+}
+
+.highlight-text {
+    color: #DAF7A6;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #CBC3E3;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.ingredients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.ingredient-card {
+    background: linear-gradient(135deg, #51223B 0%, #3A1A2D 100%);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(218, 247, 166, 0.1);
+}
+
+.ingredient-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #DAF7A6;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ingredient-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(218, 247, 166, 0.2);
+}
+
+.ingredient-card:hover::before {
+    opacity: 1;
+}
+
+.ingredient-image-wrapper {
+    width: 350px;
+    background: rgb(10 11 8 / 10%);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.ingredient-card:hover .ingredient-image-wrapper {
+    transform: scale(1.05);
+    background: rgba(4, 4, 4, 0.15);
+}
+
+.ingredient-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ingredient-title {
+    color: #DAF7A6;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.ingredient-description {
+    color: #CBC3E3;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Background Decorations */
+.decoration {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+.decoration-1 {
+    width: 400px;
+    height: 400px;
+    background: #51223B;
+    top: -200px;
+    left: -200px;
+    opacity: 0.1;
+}
+
+.decoration-2 {
+    width: 500px;
+    height: 500px;
+    background: #3A1A2D;
+    bottom: -250px;
+    right: -250px;
+    opacity: 0.1;
+}
+
+@media (max-width: 768px) {
+    .ingredients-section {
+        padding: 4rem 1rem;
+    }
+
+    .section-header h1 {
+        font-size: 2rem;
+    }
+
+    .ingredients-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ingredient-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .ingredient-image-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+        /* Faq section */
+
+        .bioheal-faq-container {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #51223B, #51223B);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .bioheal-faq-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: #DAF7A6;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: -0.02em;
+        }
+        
+        .bioheal-faq-list {
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        
+        .bioheal-faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .bioheal-faq-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .bioheal-faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #eff2e9;
+            transition: all 0.3s ease;
+        }
+        
+        .bioheal-faq-chevron {
+            width: 1.25rem;
+            height: 1.25rem;
+            transition: transform 0.3s ease;
+            stroke: #eefbd6;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+        
+        .bioheal-faq-content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: #331728;
+        }
+        
+        .bioheal-faq-item.active {
+            background: rgba(226, 221, 221, 0.05);
+        }
+        
+        .bioheal-faq-item.active .bioheal-faq-question {
+            color: #eefbd6;
+        }
+        
+        .bioheal-faq-item.active .bioheal-faq-content {
+            max-height: 300px;
+            opacity: 1;
+            padding: 1.25rem;
+        }
+        
+        .bioheal-faq-item.active .bioheal-faq-chevron {
+            transform: rotate(180deg);
+        }
+        
+        .bioheal-faq-answer {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        /* Add a subtle hover effect to questions */
+        .bioheal-faq-question:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Add a nice transition when expanding/collapsing */
+        .bioheal-faq-content {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @media (max-width: 768px) {
+            .bioheal-faq-container {
+                padding: 40px 15px;
+            }
+        
+            .bioheal-faq-title {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+        
+            .bioheal-faq-question {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+        
+            .bioheal-faq-answer {
+                font-size: 0.95rem;
+            }
+        }
+        
+        /* Add smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+ 
+    /* Guarantee Section */
+    .guarantee-wrapper {
+        background: linear-gradient(135deg, #3A1A2D 0%, #3f1c31d4 100%);
+        padding: 5rem 2rem;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .guarantee-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .guarantee-box {
+        background: linear-gradient(135deg, #51223B 0%, #51223B 100%);
+        padding: 3rem;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+    
+    .guarantee-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .guarantee-image-box {
+        margin-bottom: 2rem;
+    }
+    
+    .guarantee-image {
+        width: 180px;
+        max-width: 100%;
+        filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.2));
+    }
+    
+    .guarantee-text-box {
+        padding: 0 1rem;
+    }
+    
+    .guarantee-heading {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #DAF7A6;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+    
+    .guarantee-highlight {
+        color: #DAF7A6;
+    }
+    
+    .guarantee-description {
+        font-size: .9rem;
+        color: #CBC3E3;
+        margin-top: 1rem;
+        line-height: 1.6;
+    }
+        /* Certification Badges Section */
+        .certification-wrapper {
+            background-color: #3A1A2D;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .certification-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .certification-image-box {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .certification-image {
+            width: 100%;
+            max-width: 500px;
+            transition: transform 0.3s ease;
+        }
+        
+        .certification-image:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Background Decorations */
+        .decoration {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+        
+        .decoration-1 {
+            width: 400px;
+            height: 400px;
+            background: #BF40BF;
+            top: -200px;
+            left: -200px;
+            opacity: 0.1;
+        }
+        
+        .decoration-2 {
+            width: 500px;
+            height: 500px;
+            background: #702963;
+            bottom: -250px;
+            right: -250px;
+            opacity: 0.1;
+        }
+        
+        @media (max-width: 768px) {
+            .certification-wrapper {
+                padding: 3rem 1rem;
+            }
+        
+            .certification-image {
+                max-width: 250px;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: #3A1A2D; /* Darker shade of your theme color */
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.heading-wrapper {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.main-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #DAF7A6;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(218, 247, 166, 0.2);
+}
+
+.highlight-text {
+    color: #DAF7A6;
+    font-weight: 800;
+}
+
+.sub-heading {
+    font-size: 1.5rem;
+    color: #CBC3E3;
+    font-weight: 500;
+}
+
+.testimonials-swiper {
+    padding-bottom: 4rem;
+}
+
+.testimonial-card {
+    background: linear-gradient(135deg, #51223B 0%, #3A1A2D 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(218, 247, 166, 0.1);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    border-color: rgba(218, 247, 166, 0.2);
+}
+
+.testimonial-text {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.star-rating {
+    display: flex;
+    gap: 4px;
+}
+
+.star {
+    color: #DAF7A6;
+    font-size: 1.5rem;
+}
+
+/* Swiper custom styles */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #DAF7A6;
+    background: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.swiper-pagination-bullet {
+    background: rgba(218, 247, 166, 0.5);
+}
+
+.swiper-pagination-bullet-active {
+    background: #DAF7A6;
+}
+
+/* Background Decorations */
+.decoration {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+.decoration-1 {
+    width: 400px;
+    height: 400px;
+    background: #51223B;
+    top: -200px;
+    left: -200px;
+    opacity: 0.1;
+}
+
+.decoration-2 {
+    width: 500px;
+    height: 500px;
+    background: #3A1A2D;
+    bottom: -250px;
+    right: -250px;
+    opacity: 0.1;
+}
+
+@media (max-width: 768px) {
+    .testimonials-section {
+        padding: 4rem 1rem;
+    }
+
+    .main-heading {
+        font-size: 2.5rem;
+    }
+
+    .sub-heading {
+        font-size: 1.2rem;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+
+    .testimonial-text {
+        font-size: 1rem;
+    }
+}
+
+
+
+/* Product section */
+
+.product-section {
+    background: #51223B;
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 4rem 0;
+    overflow: hidden;
+}
+
+.product-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(191, 64, 191, 0.1) 0%, rgba(93, 63, 211, 0.1) 100%);
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.product-content {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+.product-image-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.product-image {
+    width: 200px;
+    transform: rotate(-15deg) translateY(-20px);
+    position: relative;
+    z-index: 2;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 0 20px rgba(218, 247, 166, 0.2));
+}
+
+.product-image:hover {
+    transform: rotate(-12deg) translateY(-30px) scale(1.05);
+    filter: drop-shadow(0 0 30px rgba(218, 247, 166, 0.3));
+}
+
+.overlay {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(218, 247, 166, 0.1) 0%, rgba(218, 247, 166, 0) 70%);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-title {
+    font-size: 5rem;
+    font-weight: 800;
+    color: #DAF7A6;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: relative;
+    text-shadow: 0 0 20px rgba(218, 247, 166, 0.2);
+}
+
+.product-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background: #DAF7A6;
+    border-radius: 2px;
+}
+
+/* ... keeping other styles the same, updating feature-related styles ... */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 800px;
+}
+
+.feature-item {
+    align-items: center;
+    gap: .35rem;
+    padding: 1rem 1.5rem;
+    background: rgba(203, 195, 227, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(218, 247, 166, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+}
+
+.feature-icon {
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    width: 65px;
+    height: 65px;
+    background: rgba(218, 247, 166, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 14px;
+}
+
+.feature-icon::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #51223B;
+    border-radius: inherit;
+    z-index: 0;
+}
+
+.icon-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+    filter: invert(95%) sepia(12%) saturate(1000%) hue-rotate(50deg) brightness(105%);
+}
+
+.feature-item span {
+    color: #DAF7A6;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 1.2; /* Add line height for better text wrapping */
+    flex: 1; /* Allow text to take remaining space */
+    min-width: 0; /* Enable text wrapping */
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    background: rgba(203, 195, 227, 0.1);
+    border-color: rgba(218, 247, 166, 0.2);
+    box-shadow: 0 10px 20px -10px rgba(218, 247, 166, 0.1);
+}
+
+.feature-item:hover .feature-icon {
+    background: rgba(218, 247, 166, 0.25);
+}
+
+.feature-item:hover .icon-image {
+    transform: scale(1.1);
+    filter: invert(95%) sepia(12%) saturate(1000%) hue-rotate(50deg) brightness(115%) drop-shadow(0 0 5px rgba(218, 247, 166, 0.5));
+}
+
+/* Update responsive styles */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .feature-item {
+        padding: 0.875rem 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-icon {
+        width: 55px;
+        height: 55px;
+        padding: 12px;
+    }
+    
+    .feature-item span {
+        font-size: 1rem;
+    }
+}
+
+
+/* Scientific References Section */
+.bioheal-ref-bg {
+    background: linear-gradient(135deg, #51223B 0%, #51223B 100%);
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.bioheal-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.bioheal-ref-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #DAF7A6;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.bioheal-ref-logos-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.bioheal-ref-logos {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.bioheal-rating {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.bioheal-rating img {
+    max-width: 200px;
+    height: auto;
+}
+
+.bioheal-ref-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.bioheal-ref-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bioheal-ref-item:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+    border-color: #DAF7A6;
+}
+
+.bioheal-ref-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 1.6;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.bioheal-ref-link:hover {
+    color: #DAF7A6;
+}
+
+.bioheal-disclaimer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #CBC3E3;
+    margin-top: 3rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* Footer Section */
+.bioheal-footer {
+    background-color: #3A1A2D;
+    color: #DAF7A6;
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.bioheal-footer-logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #DAF7A6;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.bioheal-footer-nav {
+    margin-bottom: 2rem;
+}
+
+.bioheal-footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.bioheal-footer-nav a {
+    color: #CBC3E3;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.bioheal-footer-nav a:hover {
+    color: #DAF7A6;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.bioheal-social-links {
+    margin-bottom: 2rem;
+}
+
+.bioheal-social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #CBC3E3;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    color: #CBC3E3;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.bioheal-social-links a:hover {
+    background-color: #BF40BF;
+    color: #FFFFFF;
+    border-color: #BF40BF;
+    transform: translateY(-3px);
+}
+
+.bioheal-footer-copyright {
+    color: #AA98A9;
+    font-size: 0.9rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bioheal-footer-copyright a {
+    color: #BF40BF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.bioheal-footer-copyright a:hover {
+    color: #DAF7A6;
+}
+
+/* Background Decorations */
+.decoration {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+.decoration-1 {
+    width: 400px;
+    height: 400px;
+    background: #BF40BF;
+    top: -200px;
+    left: -200px;
+    opacity: 0.1;
+}
+
+.decoration-2 {
+    width: 500px;
+    height: 500px;
+    background: #5D3FD3;
+    bottom: -250px;
+    right: -250px;
+    opacity: 0.1;
+}
+
+@media (max-width: 768px) {
+    .bioheal-ref-bg {
+        padding: 3rem 1rem;
+    }
+
+    .bioheal-ref-title {
+        font-size: 2rem;
+    }
+
+    .bioheal-ref-list {
+        grid-template-columns: 1fr;
+    }
+
+    .bioheal-footer-nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .bioheal-social-links {
+        margin: 2rem 0;
+    }
+
+    .bioheal-ref-logos-wrapper {
+        padding: 1rem;
+    }
+}
